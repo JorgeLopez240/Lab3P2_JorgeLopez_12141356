@@ -6,17 +6,17 @@ import java.util.ArrayList;
 public class Cfases extends Cohete{
     
     private int cant_fases;
-    private int cant_moteres;
+    private int cant_motores;
     private double altura;
 
     public Cfases() {
         super();
     }
 
-    public Cfases(int cant_fases, int cant_moteres, double altura, double peso_soportable, String nombre, int num_serie, int potencia, double velocidad) {
+    public Cfases(int cant_fases, int cant_motores, double altura, double peso_soportable, String nombre, int num_serie, int potencia, double velocidad) {
         super(peso_soportable, nombre, num_serie, potencia, velocidad);
         this.cant_fases = cant_fases;
-        this.cant_moteres = cant_moteres;
+        this.cant_motores = cant_moteres;
         this.altura = altura;
     }
 
@@ -28,12 +28,12 @@ public class Cfases extends Cohete{
         this.cant_fases = cant_fases;
     }
 
-    public int getCant_moteres() {
-        return cant_moteres;
+    public int getCant_motores() {
+        return cant_motores;
     }
 
-    public void setCant_moteres(int cant_moteres) {
-        this.cant_moteres = cant_moteres;
+    public void setCant_motores(int cant_motores) {
+        this.cant_motores = cant_motores;
     }
 
     public double getAltura() {
@@ -46,7 +46,7 @@ public class Cfases extends Cohete{
 
     @Override
     public String toString() {
-        return "Cfases{" + "cant_fases=" + cant_fases + ", cant_moteres=" + cant_moteres + ", altura=" + altura + '}'+super.toString();
+        return "Cfases{" + "cant_fases=" + cant_fases + ", cant_moteres=" + cant_motores + ", altura=" + altura + '}'+super.toString();
     }
     
     

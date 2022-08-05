@@ -149,9 +149,101 @@ public class Lab3P2_JorgeLopez_12141356 {
                          System.out.print("Ingrese la posición: ");
                          int pos = lea.nextInt();
                          if(pos>=0 && pos<cohetes.size()){
-                             Object x =cohetes.get(pos);
-                             if(x instanceof Procoso){
-                                 System.out.println("si es");   
+                             if(cohetes.get(pos) instanceof CcombustibleLiquido){
+                                 System.out.println("1. Peso Soportable");
+                                 System.out.println("2. Nombre");
+                                 System.out.println("3. Serie");
+                                 System.out.println("4. Potencia");
+                                 System.out.println("5. Litros");
+                                 System.out.print("Ingrese la opción que desea modificar: ");
+                                 int op2 = lea.nextInt();
+                                 switch(op2){
+                                     case 1:{
+                                         System.out.print("Peso nuevo: ");
+                                         double peso = lea.nextDouble();
+                                         cohetes.get(pos).setPeso_soportable(peso);
+                                     }
+                                     break;
+                                     case 2:{
+                                         System.out.print("Nombre nuevo: ");
+                                         lea.nextLine();
+                                         String nombre = lea.nextLine();
+                                         cohetes.get(pos).setNombre(nombre);
+                                     }
+                                     break;
+                                     case 3:{
+                                         System.out.print("Serie nueva: ");
+                                         int serie = lea.nextInt();
+                                         cohetes.get(pos).setNum_serie(serie);
+                                     }
+                                     break;
+                                     case 4:{
+                                         System.out.print("Potencia nueva [1-9]: ");
+                                         int potencia = lea.nextInt();
+                                         cohetes.get(pos).setPotencia(potencia);
+                                     }
+                                     break;
+                                     case 5:{
+                                         System.out.print("Litros nuevos: ");
+                                         double litros = lea.nextInt();
+                                         ((CcombustibleLiquido)cohetes.get(pos)).setLitros_gas(litros);
+                                     }
+                                     break;
+                                 }
+                             } else if(cohetes.get(pos) instanceof Cfases){
+                                 System.out.println("1. Peso Soportable");
+                                 System.out.println("2. Nombre");
+                                 System.out.println("3. Serie");
+                                 System.out.println("4. Potencia");
+                                 System.out.println("5. Cantidad de fases");
+                                 System.out.println("6. Cantidad de motores");
+                                 System.out.println("7. Altura");
+                                 System.out.print("Ingrese la opción que desea modificar: ");
+                                 int op2 = lea.nextInt();
+                                 switch(op2){
+                                     case 1:{
+                                         System.out.print("Peso nuevo: ");
+                                         double peso = lea.nextDouble();
+                                         
+                                     }
+                                     break;
+                                     case 2:{
+                                         System.out.print("Nombre nuevo: ");
+                                         lea.nextLine();
+                                         String nombre = lea.nextLine();
+                                         
+                                     }
+                                     break;
+                                     case 3:{
+                                         System.out.print("Serie nueva: ");
+                                         int serie = lea.nextInt();
+                                         
+                                     }
+                                     break;
+                                     case 4:{
+                                         System.out.print("Potencia nueva [1-9]: ");
+                                         int potencia = lea.nextInt();
+                                        
+                                     }
+                                     break;
+                                     case 5:{
+                                         System.out.print("Cantidad de fases: ");
+                                         int cant_fases = lea.nextInt();
+                                         
+                                     }
+                                     break;
+                                     case 6:{
+                                         System.out.print("Cantidad de motores: ");
+                                         int cant_motores =lea.nextInt();
+                                     
+                                     }
+                                     break;
+                                     case 7:{
+                                         System.out.print("Altura nueva: ");
+                                         double altura = lea.nextDouble();
+                                     }
+                                     break;
+                                 }
                              }
                          } else{
                              System.out.println("Posición invalida.");

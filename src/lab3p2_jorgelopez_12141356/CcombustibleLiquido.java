@@ -24,13 +24,6 @@ public class CcombustibleLiquido extends Cohete {
         this.litros_gas = litros_gas;
     }
 
-    public ArrayList<Persona> getLista_personas() {
-        return lista_personas;
-    }
-
-    public void setLista_personas(ArrayList<Persona> lista_personas) {
-        this.lista_personas = lista_personas;
-    }
 
     @Override
     public String toString() {
