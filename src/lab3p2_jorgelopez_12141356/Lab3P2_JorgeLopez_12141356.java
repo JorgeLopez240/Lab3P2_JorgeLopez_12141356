@@ -11,7 +11,6 @@ public class Lab3P2_JorgeLopez_12141356 {
     
     public static void main(String[] args) {
         
-        
         //System.out.println("ran: "+(5000+r.nextInt(15000)));
         
         ArrayList<Cohete> cohetes = new ArrayList();
@@ -90,8 +89,57 @@ public class Lab3P2_JorgeLopez_12141356 {
                     
                 }
                 break;
-                case 2:{
+                case 2:{ // Crear planeta
+                    double g2 = Math.pow(10, -11);
+                    double g1 = 6.67*g2;
                     
+                    System.out.print("Nombre: ");
+                    lea.nextLine();
+                    String nombre = lea.nextLine();
+                    System.out.print("Masa: ");
+                    double masa = lea.nextDouble();
+                    System.out.print("Radio: ");
+                    double radio = lea.nextDouble();
+                    double velocidad = Math.sqrt((2*g1*masa)/radio);
+                    System.out.print("Temperatura: ");
+                    double temp = lea.nextDouble();
+                    System.out.println("1. Rocoso"+"\n"+
+                                     "2. Gaseoso");
+                    System.out.print("Tipo: ");
+                    int tipo = lea.nextInt();
+                    switch(tipo){
+                        case 1:{
+                            System.out.print("Densidad: ");
+                            double densidad = lea.nextDouble();
+                            System.out.print("Hay vida [no = 0 / si =1]: ");
+                            int v = lea.nextInt();
+                            boolean vida=false;
+                            switch(v){
+                                case 0:{
+                                    vida = false;
+                                }
+                                break;
+                                case 1:{
+                                    vida = true;
+                                }
+                                break;
+                            }
+                            planetas.add(new Procoso(densidad, vida, nombre, masa, radio, temp, velocidad));
+                            System.out.println();
+                            System.out.println("Planeta creado exitosamente!");
+                        }
+                        break;
+                        case 2:{
+                            System.out.print("Presión: ");
+                            double presion = lea.nextDouble();
+                            System.out.print("Cantidad de anillos: ");
+                            int anillos = lea.nextInt();
+                            planetas.add(new Pgaseoso(presion, anillos, nombre, masa, radio, temp, velocidad));
+                            System.out.println();
+                            System.out.println("Planeta creado exitosamente!");
+                        }
+                        break;
+                    }
                 }
                 break;
                 case 3:{
