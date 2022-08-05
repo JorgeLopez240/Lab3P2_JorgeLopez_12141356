@@ -321,13 +321,27 @@ public class Lab3P2_JorgeLopez_12141356 {
                                 System.out.println("5. Presión");
                                 System.out.println("6. Cantidad de Anillos");
                             }
+                            System.out.println("7. Agregar luna");
+                            System.out.println("8. Modificar luna");
                             System.out.print("Ingrese la opción: ");
                             int op2 = lea.nextInt();
                             if(op2==1){
                                 System.out.print("Nombre nuevo: ");
                                 lea.nextLine();
                                 String nombre = lea.nextLine();
-                                planetas.get(pos).setNombre(nombre);
+                                boolean flag2=false;
+                                for (Planeta p : planetas) {
+                                    if(p.getNombre().equals(nombre)){
+                                        flag2=true;
+                                    }
+                                }
+                                    
+                                if(flag2==true){
+                                    System.out.println("Nombre ya existente, agregue otro.");
+                                } else{
+                                    planetas.get(pos).setNombre(nombre);
+                                }
+                                
                             } else if(op2==2){
                                 System.out.print("Masa nueva: ");
                                 double masa = lea.nextDouble();
@@ -368,6 +382,46 @@ public class Lab3P2_JorgeLopez_12141356 {
                                 System.out.print("Cantidad de anillos: ");
                                 int cant_anillos=lea.nextInt();
                                 ((Pgaseoso)planetas.get(pos)).setCant_anillos(cant_anillos);
+                            } else if(op2==7){ // agregar luna
+                                System.out.print("Nombre: ");
+                                lea.nextLine();
+                                String nombre = lea.nextLine();
+                                System.out.print("Cantidad de crateres: ");
+                                int crateres = lea.nextInt();
+                                planetas.get(pos).getLista_lunas().add(new Luna(nombre, crateres));
+                                System.out.println();
+                                System.out.println("Luna agregada exitosamente!");
+                            } else if(op2==8){
+                                if(planetas.get(pos).getLista_lunas().isEmpty()){
+                                    System.out.println("No hay lunas en ese planeta.");
+                                } else if(!(planetas.get(pos).getLista_lunas().isEmpty())){
+                                    System.out.print("Ingrese la posicion de la luna: ");
+                                    int pos2= lea.nextInt();
+                                    if(pos2>=0 &&pos2<planetas.get(pos).getLista_lunas().size()){
+                                        System.out.print("1. Modificar nombre "+"\n"+
+                                                        "Modificar crateres");
+                                        System.out.print("Ingrese la opción que desea modificar: ");
+                                        int op3 = lea.nextInt();
+                                        switch(op3){
+                                            case 1:{
+                                                System.out.print("Nuevo nombre: ");
+                                                lea.nextLine();
+                                                String nom = lea.nextLine();
+                                                planetas.get(pos).getLista_lunas().get(pos2).setNombre(nom);
+                                            }
+                                            break;
+                                            case 2:{
+                                                System.out.print("Nuevos crateres: ");
+                                                int crateres = lea.nextInt();
+                                                planetas.get(pos).getLista_lunas().get(pos2).setCant_crateres(crateres);
+                                            }
+                                        }
+                                    } else{
+                                        System.out.println("Posicion invalida.");
+                                    }
+                                    
+                                }
+                                
                             }
                         } else{
                             System.out.println("Posicón invalida.");

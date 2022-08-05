@@ -28,6 +28,7 @@ public class Planeta {
     }
 
     public void setNombre(String nombre) {
+        
         this.nombre = nombre;
     }
 
