@@ -11,8 +11,8 @@ public class Lab3P2_JorgeLopez_12141356 {
     
     public static void main(String[] args) {
         
-        System.out.println("hola");
-        System.out.println("ran: "+(15000+r.nextInt(5000)));
+        
+        //System.out.println("ran: "+(5000+r.nextInt(15000)));
         
         ArrayList<Cohete> cohetes = new ArrayList();
         ArrayList<Planeta> planetas = new ArrayList();
@@ -28,7 +28,7 @@ public class Lab3P2_JorgeLopez_12141356 {
             System.out.println("5. Listar Cohetes");
             System.out.println("6. Listar Planetas");
             System.out.println("7. Probar Cohete");
-            System.out.println("Ingrese la opción: ");
+            System.out.print("Ingrese la opción: ");
             int op = lea.nextInt();
             System.out.println();
             switch(op){
@@ -46,10 +46,11 @@ public class Lab3P2_JorgeLopez_12141356 {
                     int num_serie = lea.nextInt();
                     System.out.print("Potencia [1-9]: ");
                     int potencia = lea.nextInt();
-                    
+                    int ran = 5000+r.nextInt(15000);
+                    double velocidad = potencia*ran;
                     System.out.println();
-                    System.out.println("1. Liquido" +
-                                        "2. De Fases" +
+                    System.out.println("1. Liquido" + "\n"+
+                                        "2. De Fases" + "\n" +
                                             "3. Solido");
                     System.out.print("Tipo: ");
                     int tipo = lea.nextInt();
@@ -57,7 +58,9 @@ public class Lab3P2_JorgeLopez_12141356 {
                         case 1:{
                             System.out.print("Litros: ");
                             double litros = lea.nextInt();
-                            //cohetes.add(new CcombustibleLiquido(litros, peso, nombre, num_serie, potencia, ));
+                            cohetes.add(new CcombustibleLiquido(litros, peso, nombre, num_serie, potencia, velocidad));
+                            System.out.println();
+                            System.out.println("Cohete agregado exitosamente!");
                         }
                         break;
                         case 2:{
@@ -67,14 +70,20 @@ public class Lab3P2_JorgeLopez_12141356 {
                             int motores = lea.nextInt();
                             System.out.print("Altura: ");
                             double altura = lea.nextDouble();
+                            cohetes.add(new Cfases(fases, motores, altura, peso, nombre, num_serie, potencia, velocidad));
+                            System.out.println();
+                            System.out.println("Cohete agregado exitosamente!");
                         }
                         break;
                         case 3:{
-                            System.out.print("Combustible: ");
+                            System.out.print("kilos: ");
                             double combustible = lea.nextDouble();
                             System.out.print("Material: ");
                             lea.nextLine();
                             String nombreMat = lea.nextLine();
+                            cohetes.add(new CcombustibleSolido(combustible, nombreMat, peso, nombre, num_serie, potencia, velocidad));
+                            System.out.println();
+                            System.out.println("Cohete agregado exitosamente!");
                         }
                         break;
                     }
