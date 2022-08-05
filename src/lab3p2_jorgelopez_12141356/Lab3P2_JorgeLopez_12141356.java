@@ -323,6 +323,52 @@ public class Lab3P2_JorgeLopez_12141356 {
                             }
                             System.out.print("Ingrese la opción: ");
                             int op2 = lea.nextInt();
+                            if(op2==1){
+                                System.out.print("Nombre nuevo: ");
+                                lea.nextLine();
+                                String nombre = lea.nextLine();
+                                planetas.get(pos).setNombre(nombre);
+                            } else if(op2==2){
+                                System.out.print("Masa nueva: ");
+                                double masa = lea.nextDouble();
+                                planetas.get(pos).setMasa(masa);
+                            } else if(op2 ==3){
+                                System.out.print("Radio nuevo: ");
+                                double radio = lea.nextDouble();
+                                planetas.get(pos).setRadio(radio);
+                            } else if(op2 ==4){
+                                System.out.print("Temperatura nueva: ");
+                                double temp = lea.nextDouble();
+                                planetas.get(pos).setTemp_promedio(temp);
+                            } else if(op2 ==5 && (planetas.get(pos)instanceof Procoso)){
+                                System.out.print("Densidad nueva: ");
+                                double den = lea.nextDouble();
+                                ((Procoso)planetas.get(pos)).setDensidad(den);
+                            } else if(op2 ==6 && (planetas.get(pos)instanceof Procoso)){
+                                System.out.println("Vida [no =0 / si =1]:");
+                                int v = lea.nextInt();
+                                boolean vida =false;
+                                switch(v){
+                                    case 0:{
+                                        vida=false;
+                                    }
+                                    break;
+                                    case 1:{
+                                        vida = true;
+                                    }
+                                    break;
+                                }
+                                ((Procoso)planetas.get(pos)).setIndicador_vida(vida);
+                            } else if(op2 ==5 && (planetas.get(pos) instanceof Pgaseoso)){
+                                System.out.print("Presión nueva: ");
+                                double presion = lea.nextDouble();
+                                ((Pgaseoso)planetas.get(pos)).setPresion(presion);
+                            }
+                            else if(op2 ==6 &&(planetas.get(pos) instanceof Pgaseoso)){
+                                System.out.print("Cantidad de anillos: ");
+                                int cant_anillos=lea.nextInt();
+                                ((Pgaseoso)planetas.get(pos)).setCant_anillos(cant_anillos);
+                            }
                         } else{
                             System.out.println("Posicón invalida.");
                         }
@@ -349,7 +395,7 @@ public class Lab3P2_JorgeLopez_12141356 {
                     System.out.print(salida);
                 }
                 break;
-                case 7:{
+                case 7:{ // Probar cohete
                     
                 }
                 break;
