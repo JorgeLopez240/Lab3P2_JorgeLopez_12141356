@@ -16,6 +16,21 @@ public class Lab3P2_JorgeLopez_12141356 {
         ArrayList<Cohete> cohetes = new ArrayList();
         ArrayList<Planeta> planetas = new ArrayList();
         
+        //Cohete default 1, en la posicion 0
+        int ran2 = 5000+r.nextInt(15000);
+        double velo2 = 4*ran2;
+        cohetes.add(new Cohete(400, "James", 242, 4, velo2));
+        
+        
+        //Planeta default 1, en la posicion 0
+        double g22 = Math.pow(10, -11);
+                    double g11 = 6.67*g22;
+                    double velo3 = Math.sqrt((2*g11*1421)/5234);
+        planetas.add(new Procoso(123143, true, "Vegeta", 1421, 5234, 45, velo3));
+        
+        
+        
+        
         boolean flag = true;
         while(flag == true){
             System.out.println();
@@ -27,6 +42,7 @@ public class Lab3P2_JorgeLopez_12141356 {
             System.out.println("5. Listar Cohetes");
             System.out.println("6. Listar Planetas");
             System.out.println("7. Probar Cohete");
+            System.out.println("8. Agregar o modificar persona de un cohete");
             System.out.print("Ingrese la opción: ");
             int op = lea.nextInt();
             System.out.println();
@@ -509,6 +525,84 @@ public class Lab3P2_JorgeLopez_12141356 {
                         }
                     }
                     
+                }
+                break;
+                case 8:{
+                    if(cohetes.isEmpty()){
+                        System.out.println("No hay cohetes agregados.");
+                    } else if(!(cohetes.isEmpty())){
+                        System.out.print("Ingrese la posicion del cohete: ");
+                        int pos = lea.nextInt();
+                        if(pos>=0 &&pos<cohetes.size()){
+                            System.out.println("1. Agregar persona"+"\n"+
+                                    "2. Modificar persona");
+                            System.out.print("Ingrese la opcion que desea: ");
+                            int op4=lea.nextInt();
+                            switch(op4){
+                                case 1:{
+                                    System.out.print("Nombre: ");
+                                    lea.nextLine();
+                                    String nom = lea.nextLine();
+                                    System.out.print("Edad: ");
+                                    int edad = lea.nextInt();
+                                    System.out.print("Peso: ");
+                                    double peso = lea.nextDouble();
+                                    cohetes.get(pos).getLista_personas().add(new Persona(nom, edad, peso));
+                                    System.out.println();
+                                    System.out.println("Persona agregada exitosamente!");
+                                }
+                                break;
+                                case 2:{
+                                    if(cohetes.get(pos).getLista_personas().isEmpty()){
+                                        System.out.println("No hay personas agregadas.");
+                                    } else if(!(cohetes.get(pos).getLista_personas().isEmpty())){
+                                        System.out.print("Ingrese la posicion de la persona: ");
+                                        int per = lea.nextInt();
+                                        if(per>=0 &&per<=cohetes.get(pos).getLista_personas().size()){
+                                            System.out.println("1. Nombre"+"\n"+
+                                                        "2. Edad"+"\n"+
+                                                            "3. Peso");
+                                            System.out.print("Ingrese la opcion: ");
+                                            int op5=lea.nextInt();
+                                            switch(op5){
+                                                case 1:{
+                                                    System.out.print("Nombre nuevo: ");
+                                                    lea.nextLine();
+                                                    String nom = lea.nextLine();
+                                                    cohetes.get(pos).getLista_personas().get(per).setNombre(nom);
+                                                }
+                                                break;
+                                                case 2:{
+                                                    System.out.print("Edad nueva: ");
+                                                    int edad = lea.nextInt();
+                                                    cohetes.get(pos).getLista_personas().get(per).setEdad(edad);
+                                                }
+                                                break;
+                                                case 3:{
+                                                    System.out.print("Peso nuevo: ");
+                                                    double peso = lea.nextDouble();
+                                                    cohetes.get(pos).getLista_personas().get(per).setPeso(peso);
+
+                                                }
+                                                break;
+                                            }
+                                        } else{
+                                            System.out.println("Posicion invalida.");
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                break;
+                            }
+                        } else{
+                            System.out.println("Opcion invalida.");
+                        }
+                    }
+                }
+                break;
+                default:{
+                    System.out.println("Opcion invalida.");
                 }
                 break;
             }
