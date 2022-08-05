@@ -396,6 +396,64 @@ public class Lab3P2_JorgeLopez_12141356 {
                 }
                 break;
                 case 7:{ // Probar cohete
+                    System.out.print("Ingrese la posición del planeta a probar: ");
+                    int pos = lea.nextInt();
+                    if(planetas.isEmpty()){
+                        System.out.println("No hay planetas agregados para probar.");
+                    } else if(!(planetas.isEmpty())){
+                        if(pos>=0 && pos<planetas.size()){
+                            System.out.println("1. Lanzar un solo cohete" +" \n"+
+                                            "2. Lanzar todos los cohetes");
+                            System.out.print("Ingrese la opción: ");
+                            int op2 = lea.nextInt();
+                            int good=0;
+                            int bad=0;
+                            switch(op2){
+                                case 1:{
+                                    if(cohetes.isEmpty()){
+                                        System.out.println("No hay cohetes.");
+                                    } else if(!(cohetes.isEmpty())){
+                                        System.out.print("Ingrese la posición del cohete que desea lanzar: ");
+                                        int pos2 = lea.nextInt();
+                                        if(pos2>=0 &&pos2<cohetes.size()){
+                                            if((planetas.get(pos).getVelocidad_escape())>(cohetes.get(pos2).getVelocidad())){
+                                                bad++;
+                                            } else{
+                                                good++;
+                                            }
+                                        } else{
+                                            System.out.println("Posición invalida.");
+                                        }
+                                    }
+                                }
+                                break;
+                                case 2:{
+                                    if(cohetes.isEmpty()){
+                                        System.out.println("No hay cohetes.");
+                                    } else if(!(cohetes.isEmpty())){
+                                        System.out.print("Ingrese la posición del cohete que desea lanzar: ");
+                                        int pos2 = lea.nextInt();
+                                        if(pos2>=0 &&pos2<cohetes.size()){
+                                            for (Cohete c : cohetes) {
+                                                if((planetas.get(pos).getVelocidad_escape())>(c.getVelocidad())){
+                                                    bad++;
+                                                } else{
+                                                    good++;
+                                                }
+                                            }
+                                        } else{
+                                            System.out.println("Posición invalida.");
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                            System.out.println("Cohetes exitosos: "+good);
+                            System.out.println("Cohetes fallidos: "+bad);
+                        } else{
+                            System.out.println("Posicion invalida.");
+                        }
+                    }
                     
                 }
                 break;
