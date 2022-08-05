@@ -16,7 +16,7 @@ public class Cfases extends Cohete{
     public Cfases(int cant_fases, int cant_motores, double altura, double peso_soportable, String nombre, int num_serie, int potencia, double velocidad) {
         super(peso_soportable, nombre, num_serie, potencia, velocidad);
         this.cant_fases = cant_fases;
-        this.cant_motores = cant_moteres;
+        this.cant_motores = cant_motores;
         this.altura = altura;
     }
 

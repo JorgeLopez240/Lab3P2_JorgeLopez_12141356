@@ -148,6 +148,7 @@ public class Lab3P2_JorgeLopez_12141356 {
                      } else if(!(cohetes.isEmpty())){
                          System.out.print("Ingrese la posición: ");
                          int pos = lea.nextInt();
+                         System.out.println();
                          if(pos>=0 && pos<cohetes.size()){
                              if(cohetes.get(pos) instanceof CcombustibleLiquido){
                                  System.out.println("1. Peso Soportable");
@@ -204,43 +205,93 @@ public class Lab3P2_JorgeLopez_12141356 {
                                      case 1:{
                                          System.out.print("Peso nuevo: ");
                                          double peso = lea.nextDouble();
-                                         
+                                         cohetes.get(pos).setPeso_soportable(peso);
                                      }
                                      break;
                                      case 2:{
                                          System.out.print("Nombre nuevo: ");
                                          lea.nextLine();
                                          String nombre = lea.nextLine();
-                                         
+                                         cohetes.get(pos).setNombre(nombre);
                                      }
                                      break;
                                      case 3:{
                                          System.out.print("Serie nueva: ");
                                          int serie = lea.nextInt();
-                                         
+                                         cohetes.get(pos).setNum_serie(serie);
                                      }
                                      break;
                                      case 4:{
                                          System.out.print("Potencia nueva [1-9]: ");
                                          int potencia = lea.nextInt();
-                                        
+                                         cohetes.get(pos).setPotencia(potencia);
                                      }
                                      break;
                                      case 5:{
                                          System.out.print("Cantidad de fases: ");
                                          int cant_fases = lea.nextInt();
-                                         
+                                         ((Cfases)cohetes.get(pos)).setCant_fases(cant_fases);
                                      }
                                      break;
                                      case 6:{
                                          System.out.print("Cantidad de motores: ");
                                          int cant_motores =lea.nextInt();
-                                     
+                                         ((Cfases)cohetes.get(pos)).setCant_motores(cant_motores);
                                      }
                                      break;
                                      case 7:{
                                          System.out.print("Altura nueva: ");
                                          double altura = lea.nextDouble();
+                                         ((Cfases)cohetes.get(pos)).setAltura(altura);
+                                     }
+                                     break;
+                                 }
+                             } else if(cohetes.get(pos) instanceof CcombustibleSolido){
+                                 System.out.println("1. Peso Soportable");
+                                 System.out.println("2. Nombre");
+                                 System.out.println("3. Serie");
+                                 System.out.println("4. Potencia");
+                                 System.out.println("5. Kilos de combustible");
+                                 System.out.println("6. Nombre de material");
+                                 System.out.print("Ingrese la opción que desea modificar: ");
+                                 int op2 = lea.nextInt();
+                                 switch(op2){
+                                     case 1:{
+                                         System.out.print("Peso nuevo: ");
+                                         double peso = lea.nextDouble();
+                                         cohetes.get(pos).setPeso_soportable(peso);
+                                     }
+                                     break;
+                                     case 2:{
+                                         System.out.print("Nombre nuevo: ");
+                                         lea.nextLine();
+                                         String nombre = lea.nextLine();
+                                         cohetes.get(pos).setNombre(nombre);
+                                     }
+                                     break;
+                                     case 3:{
+                                         System.out.print("Serie nueva: ");
+                                         int serie = lea.nextInt();
+                                         cohetes.get(pos).setNum_serie(serie);
+                                     }
+                                     break;
+                                     case 4:{
+                                         System.out.print("Potencia nueva [1-9]: ");
+                                         int potencia = lea.nextInt();
+                                         cohetes.get(pos).setPotencia(potencia);
+                                     }
+                                     break;
+                                     case 5:{
+                                         System.out.print("Kilos de combustible: ");
+                                         double kilos = lea.nextDouble();
+                                         ((CcombustibleSolido)cohetes.get(pos)).setKilos_gas(kilos);
+                                     }
+                                     break;
+                                     case 6:{
+                                         System.out.print("Nombre de material: ");
+                                         lea.nextLine();
+                                         String material = lea.nextLine();
+                                         ((CcombustibleSolido)cohetes.get(pos)).setNombre_material(material);
                                      }
                                      break;
                                  }
