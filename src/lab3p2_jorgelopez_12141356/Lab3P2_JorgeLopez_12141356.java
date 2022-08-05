@@ -303,7 +303,30 @@ public class Lab3P2_JorgeLopez_12141356 {
                 }
                 break;
                 case 4:{ // Editar planeta
-                    
+                    if(planetas.isEmpty()){
+                        System.out.println("No hay planetas agregados.");
+                    } else if(!(planetas.isEmpty())){
+                        System.out.print("Ingrese la posición: ");
+                        int pos = lea.nextInt();
+                        System.out.println();
+                        if(pos>=0 && pos<planetas.size()){
+                            System.out.println("1. Nombre");
+                            System.out.println("2. Masa");
+                            System.out.println("3. Radio");
+                            System.out.println("4. Temperatura");
+                            if(planetas.get(pos) instanceof Procoso){
+                                System.out.println("5. Densidad");
+                                System.out.println("6. Vida");
+                            } else if(planetas.get(pos) instanceof Pgaseoso){
+                                System.out.println("5. Presión");
+                                System.out.println("6. Cantidad de Anillos");
+                            }
+                            System.out.print("Ingrese la opción: ");
+                            int op2 = lea.nextInt();
+                        } else{
+                            System.out.println("Posicón invalida.");
+                        }
+                    }
                 }
                 break;
                 case 5:{ //Listar cohetes
