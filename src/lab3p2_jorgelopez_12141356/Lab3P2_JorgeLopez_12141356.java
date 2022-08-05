@@ -142,20 +142,45 @@ public class Lab3P2_JorgeLopez_12141356 {
                     }
                 }
                 break;
-                case 3:{
-                     
+                case 3:{ // Editar cohete
+                     if(cohetes.isEmpty()){
+                         System.out.println("No hay cohetes agregados.");
+                     } else if(!(cohetes.isEmpty())){
+                         System.out.print("Ingrese la posición: ");
+                         int pos = lea.nextInt();
+                         if(pos>=0 && pos<cohetes.size()){
+                             Object x =cohetes.get(pos);
+                             if(x instanceof Procoso){
+                                 System.out.println("si es");   
+                             }
+                         } else{
+                             System.out.println("Posición invalida.");
+                         }
+                     }
                 }
                 break;
-                case 4:{
+                case 4:{ // Editar planeta
                     
                 }
                 break;
-                case 5:{
-                    
+                case 5:{ //Listar cohetes
+                    String salida ="";
+                    for (Cohete c : cohetes) {
+                        salida += cohetes.indexOf(c) + " -> "+c + "\n";
+                    }
+                    System.out.println("Lista de cohetes: ");
+                    System.out.println();
+                    System.out.print(salida);
                 }
                 break;
-                case 6:{
-                    
+                case 6:{ //Listar planetas
+                    String salida = "";
+                    for (Planeta p : planetas) {
+                        salida += planetas.indexOf(p) + " -> "+p + "\n";
+                    }
+                    System.out.println("Lista de cohetes: ");
+                    System.out.println();
+                    System.out.print(salida);
                 }
                 break;
                 case 7:{

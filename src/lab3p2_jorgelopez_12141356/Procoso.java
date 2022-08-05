@@ -34,7 +34,7 @@ public class Procoso extends Planeta{
 
     @Override
     public String toString() {
-        return "Procoso{" + "densidad=" + densidad + ", indicador_vida=" + indicador_vida + '}';
+        return "Procoso{" + "densidad=" + densidad + ", indicador_vida=" + indicador_vida + '}'+super.toString();
     }
     
     

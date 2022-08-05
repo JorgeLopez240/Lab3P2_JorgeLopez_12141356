@@ -34,7 +34,7 @@ public class Pgaseoso extends Planeta{
 
     @Override
     public String toString() {
-        return "Pgaseoso{" + "presion=" + presion + ", cant_anillos=" + cant_anillos + '}';
+        return "Pgaseoso{" + "presion=" + presion + ", cant_anillos=" + cant_anillos + '}'+super.toString();
     }
     
     
