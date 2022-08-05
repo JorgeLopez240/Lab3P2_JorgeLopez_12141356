@@ -44,14 +44,6 @@ public class Cfases extends Cohete{
         this.altura = altura;
     }
 
-    public ArrayList<Persona> getLista_personas() {
-        return lista_personas;
-    }
-
-    public void setLista_personas(ArrayList<Persona> lista_personas) {
-        this.lista_personas = lista_personas;
-    }
-
     @Override
     public String toString() {
         return "Cfases{" + "cant_fases=" + cant_fases + ", cant_moteres=" + cant_moteres + ", altura=" + altura + '}';

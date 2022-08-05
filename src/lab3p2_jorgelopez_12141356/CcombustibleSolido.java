@@ -34,14 +34,6 @@ public class CcombustibleSolido extends Cohete{
         this.nombre_material = nombre_material;
     }
 
-    public ArrayList<Persona> getLista_personas() {
-        return lista_personas;
-    }
-
-    public void setLista_personas(ArrayList<Persona> lista_personas) {
-        this.lista_personas = lista_personas;
-    }
-
     @Override
     public String toString() {
         return "CcombustibleSolido{" + "kilos_gas=" + kilos_gas + ", nombre_material=" + nombre_material + '}';
